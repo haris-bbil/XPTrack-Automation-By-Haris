@@ -1,0 +1,32 @@
+import { test, expect } from '@playwright/test';
+
+test('test', async ({ page }) => {
+  await page.goto('http://stage.ashiquehassan.com/login');
+  await page.getByRole('link', { name: 'Register Here' }).click();
+  await page.getByRole('textbox', { name: 'Enter First Name' }).click();
+  await page.getByRole('textbox', { name: 'Enter First Name' }).fill('QA');
+  await page.getByRole('textbox', { name: 'Enter First Name' }).press('Tab');
+  await page.getByRole('textbox', { name: 'Enter Last Name' }).fill('Hasan');
+  await page.getByRole('textbox', { name: 'Enter Last Name' }).press('Tab');
+  await page.getByRole('textbox', { name: 'Email' }).fill('qa_hasan92@yopmail.com');
+  await page.getByRole('textbox', { name: 'Enter First Name' }).click();
+  await page.getByRole('textbox', { name: 'Enter First Name' }).fill('QAE');
+  await page.getByRole('button', { name: 'Submit' }).click();
+  await page.getByText('User successfully registered.').click();
+  await page.locator('#register-form div').filter({ hasText: 'User successfully registered.' }).dblclick();
+  await page.getByRole('link', { name: 'Cancel' }).click();
+  await page.getByRole('link', { name: 'Register Here' }).click();
+  await page.getByRole('button', { name: 'Submit' }).click();
+  await page.locator('#first_name_error').click();
+  await page.locator('#last_name_error').click();
+  await page.getByText('Please enter a valid email').click();
+  await page.getByRole('textbox', { name: 'Enter First Name' }).click();
+  await page.getByRole('textbox', { name: 'Enter First Name' }).fill('asdas');
+  await page.getByRole('textbox', { name: 'Enter Last Name' }).click();
+  await page.getByRole('textbox', { name: 'Enter First Name' }).fill('asdasas');
+  await page.getByRole('textbox', { name: 'Enter Last Name' }).fill('dasda');
+  await page.getByRole('textbox', { name: 'Email' }).click();
+  await page.getByRole('textbox', { name: 'Email' }).fill('asdsad@asdas.co,');
+  await page.getByRole('button', { name: 'Submit' }).click();
+  await page.getByRole('button', { name: 'Close' }).click();
+});

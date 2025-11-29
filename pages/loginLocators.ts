@@ -1,0 +1,122 @@
+import { test, expect } from '@playwright/test';
+
+test('test', async ({ page }) => {
+  await page.goto('https://telaeris.xptrackstaging.com/login');
+  await page.getByPlaceholder('User Name or Email').click();
+  await page.getByPlaceholder('User Name or Email').fill('haris');
+  await page.getByPlaceholder('User Name or Email').press('Tab');
+  await page.getByPlaceholder('Password').fill('Kazi#12');
+  await page.getByRole('button', { name: 'Login' }).click();
+  await page.getByPlaceholder('User Name or Email').click();
+  await page.getByPlaceholder('User Name or Email').fill('haris12');
+  await page.getByPlaceholder('Password').click();
+  await page.getByPlaceholder('Password').fill('Kazi#12');
+ // await page.locator('#login-form i').click();
+  //await page.locator('#login-form i').click();
+  await page.getByRole('button', { name: 'Login' }).click();
+  //await page.getByRole('button', { name: 'Verify' }).click();
+  //await page.getByRole('button', { name: 'Close' }).click();
+  //await page.getByRole('heading', { name: 'Users' }).getByRole('listitem').click();
+  await expect(page.locator('heading')).toHaveText('Users')
+
+  import { test, expect } from '@playwright/test';
+
+test('test', async ({ page }) => {
+  await page.goto('https://stage.ashiquehassan.com/login');
+  await page.getByRole('textbox', { name: 'User Name or Email' }).click();
+  await page.getByRole('textbox', { name: 'User Name or Email' }).fill('haris');
+  await page.getByRole('textbox', { name: 'User Name or Email' }).press('Tab');
+  await page.getByRole('textbox', { name: 'Password' }).press('ArrowUp');
+  await page.getByRole('textbox', { name: 'Password' }).fill('Kasdsadasdasd');
+  await page.getByRole('textbox', { name: 'User Name or Email' }).click();
+  await page.getByRole('textbox', { name: 'User Name or Email' }).fill('haris234234');
+  await page.getByRole('button', { name: 'Login' }).click();
+  await page.locator('#login-form').getByText('Invalid Username/Email or').click();
+  await page.locator('#login-form').getByText('Invalid Username/Email or').click();
+  await page.getByRole('textbox', { name: 'User Name or Email' }).fill('haris');
+  await page.getByRole('textbox', { name: 'User Name or Email' }).press('Tab');
+  await page.getByRole('textbox', { name: 'Password' }).fill('Kazi#12');
+  await page.getByRole('button', { name: 'Login' }).click();
+  await page.goto('https://stage.ashiquehassan.com/profile');
+  await page.getByRole('link', { name: 'avatar' }).click();
+  await page.getByRole('link', { name: 'Admin: Haris Mifta ' }).click();
+  await page.getByRole('link', { name: 'Admin: Haris Mifta ' }).click();
+  await page.getByRole('link', { name: 'Admin: Haris Mifta ' }).click();
+  await page.locator('.phpdebugbar-close-btn').click();
+  await page.locator('.bottom-left-fixed.system-color.for-large-device > .bottom-left-fixed-list > .logout-icon > a').click();
+  await page.goto('https://stage.ashiquehassan.com/login');
+  await page.getByRole('button', { name: 'Close' }).click();
+  await page.getByRole('textbox', { name: 'User Name or Email' }).click();
+  await page.getByRole('textbox', { name: 'User Name or Email' }).click();
+  await page.getByRole('textbox', { name: 'User Name or Email' }).fill('haris');
+  await page.getByRole('textbox', { name: 'User Name or Email' }).press('Tab');
+  await page.getByRole('textbox', { name: 'Password' }).fill('Kazi#12');
+  await page.getByRole('button', { name: 'Login' }).click();
+  await page.goto('https://stage.ashiquehassan.com/profile');
+  await page.getByRole('link', { name: 'Admin: Haris Mifta ' }).click();
+  await page.getByRole('link', { name: 'Admin: Haris Mifta ' }).click();
+  await page.getByRole('link', { name: 'Admin: Haris Mifta ' }).click();
+  await page.getByRole('link', { name: 'Admin: Haris Mifta ' }).click();
+  await page.getByRole('link', { name: 'Admin: Haris Mifta ' }).click();
+  await page.getByRole('link', { name: 'Admin: Haris Mifta ' }).click();
+  await page.getByRole('link', { name: 'Admin: Haris Mifta ' }).click();
+  await page.getByRole('textbox', { name: 'Search' }).click();
+  await page.getByRole('textbox', { name: 'Search' }).fill('user ');
+  await page.getByRole('link', { name: 'User Logins User Logins' }).click();
+  await page.getByRole('button', { name: 'Add New' }).click();
+  await page.getByText('Please Select User', { exact: true }).click();
+  await page.getByRole('button', { name: '' }).click();
+});
+
+import { test, expect } from '@playwright/test';
+
+test('test', async ({ page }) => {
+  await page.goto('https://stage.ashiquehassan.com/login');
+  await page.getByRole('textbox', { name: 'User Name or Email' }).click();
+  await page.getByRole('textbox', { name: 'User Name or Email' }).fill('haris');
+  await page.getByRole('textbox', { name: 'User Name or Email' }).press('Tab');
+  await page.getByRole('textbox', { name: 'Password' }).press('ArrowUp');
+  await page.getByRole('textbox', { name: 'Password' }).fill('Kasdsadasdasd');
+  await page.getByRole('textbox', { name: 'User Name or Email' }).click();
+  await page.getByRole('textbox', { name: 'User Name or Email' }).fill('haris234234');
+  await page.getByRole('button', { name: 'Login' }).click();
+  await page.locator('#login-form').getByText('Invalid Username/Email or').click();
+  await page.locator('#login-form').getByText('Invalid Username/Email or').click();
+  await page.getByRole('textbox', { name: 'User Name or Email' }).fill('haris');
+  await page.getByRole('textbox', { name: 'User Name or Email' }).press('Tab');
+  await page.getByRole('textbox', { name: 'Password' }).fill('Kazi#12');
+  await page.getByRole('button', { name: 'Login' }).click();
+  await page.goto('https://stage.ashiquehassan.com/profile');
+  await page.getByRole('link', { name: 'avatar' }).click();
+  await page.getByRole('link', { name: 'Admin: Haris Mifta ' }).click();
+  await page.getByRole('link', { name: 'Admin: Haris Mifta ' }).click();
+  await page.getByRole('link', { name: 'Admin: Haris Mifta ' }).click();
+  await page.locator('.phpdebugbar-close-btn').click();
+  await page.locator('.bottom-left-fixed.system-color.for-large-device > .bottom-left-fixed-list > .logout-icon > a').click();
+  await page.goto('https://stage.ashiquehassan.com/login');
+  await page.getByRole('button', { name: 'Close' }).click();
+  await page.getByRole('textbox', { name: 'User Name or Email' }).click();
+  await page.getByRole('textbox', { name: 'User Name or Email' }).click();
+  await page.getByRole('textbox', { name: 'User Name or Email' }).fill('haris');
+  await page.getByRole('textbox', { name: 'User Name or Email' }).press('Tab');
+  await page.getByRole('textbox', { name: 'Password' }).fill('Kazi#12');
+  await page.getByRole('button', { name: 'Login' }).click();
+  await page.goto('https://stage.ashiquehassan.com/profile');
+  await page.getByRole('link', { name: 'Admin: Haris Mifta ' }).click();
+  await page.getByRole('link', { name: 'Admin: Haris Mifta ' }).click();
+  await page.getByRole('link', { name: 'Admin: Haris Mifta ' }).click();
+  await page.getByRole('link', { name: 'Admin: Haris Mifta ' }).click();
+  await page.getByRole('link', { name: 'Admin: Haris Mifta ' }).click();
+  await page.getByRole('link', { name: 'Admin: Haris Mifta ' }).click();
+  await page.getByRole('link', { name: 'Admin: Haris Mifta ' }).click();
+  await page.getByRole('textbox', { name: 'Search' }).click();
+  await page.getByRole('textbox', { name: 'Search' }).fill('user ');
+  await page.getByRole('link', { name: 'User Logins User Logins' }).click();
+  await page.getByRole('button', { name: 'Add New' }).click();
+  await page.getByText('Please Select User', { exact: true }).click();
+  await page.getByRole('button', { name: '' }).click();
+});
+  
+   //await page.locator('#login-form div').filter({ hasText: 'You have' }).click();
+
+});
