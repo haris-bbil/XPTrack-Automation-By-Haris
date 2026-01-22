@@ -28,8 +28,8 @@ export default defineConfig({
     /* Base URL to use in actions like `await page.goto('')`. */
     // baseURL: 'http://localhost:3000',
     headless: false,
-    baseURL: process.env.BASE_URL || 'https://stage.ashiquehassan.com',
-    trace: 'on-first-retry',
+    baseURL: process.env.BASE_URL || 'https://stage.xptracklocal.com',
+    trace: 'on',
 
     /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
   },
