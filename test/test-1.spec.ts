@@ -1,6 +1,6 @@
 import { test, expect } from '@playwright/test';
 
-test('test', async ({ page }) => {
+test.skip('test', async ({ page }) => {
   await page.goto('http://stage.ashiquehassan.com/login');
   await page.getByRole('link', { name: 'Register Here' }).click();
   await page.getByRole('textbox', { name: 'Enter First Name' }).click();

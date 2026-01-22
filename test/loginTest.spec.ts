@@ -1,5 +1,5 @@
 import { test, expect } from '@playwright/test';
-import LoginPage from '../pages/loginPage';
+import LoginPage from '../pages/loginPage.js';
 
 // Test data
 const TEST_USERS = {
@@ -23,25 +23,28 @@ test.describe('Login Functionality Tests', () => {
     await expect(loginPage.loginButton).toBeVisible();
   });
 
-  test('Validation error for invalid credentials', async () => {
+  test('Validation error for invalid credentials', async ({ page }) => {
     const { username, password } = TEST_USERS.invalid;
     await loginPage.login(username, password);
     await loginPage.verifyErrorMessage();
   });
 
-
   test('Register a new user successfully', async ({ page }) => {
-    // Generate unique email for each test run
     const timestamp = new Date().getTime();
-    const testEmail = 'harismifta92@gmail.com'
-    //`testuser_${timestamp}@example.com`;
+    const testEmail = `testuser_${timestamp}@example.com`;
+    
+    // Click register button and wait for navigation
+    await loginPage.registerButton.click();
+    await page.waitForURL('**/register', { timeout: 10000 }); // Adjust URL pattern as needed
+    await page.waitForLoadState('domcontentloaded');
     
     // Fill and submit registration form
     await loginPage.registerUser('Test', 'User', testEmail);
     
-    // Verify success message is displayed
+    // Verify successful registration
+    await expect(loginPage.successMessage).toBeVisible({ timeout: 10000 });
     await loginPage.verifySuccessMessage();
-  });
+});
 
 
   test('Login with valid credentials', async ({ page }) => {

@@ -1,7 +1,7 @@
 import { Page, Locator, expect } from '@playwright/test';
 
 const DEFAULT_TIMEOUT = 2000;
-const DEFAULT_BASE_URL = 'https://stage.ashiquehassan.com';
+const DEFAULT_BASE_URL = '';
 
 export default class LoginPage {
   private readonly page: Page;
@@ -48,23 +48,23 @@ export default class LoginPage {
   }
 
   async registerUser(firstName: string = 'QAE', lastName: string = 'Hasan', email: string = 'qa_hasan92@yopmail.com'): Promise<void> {
+    await this.page.waitForLoadState('networkidle');
     
-    await this.registerButton.click(); // Fill in the registration form
     const firstNameInput = this.page.getByRole('textbox', { name: 'Enter First Name' });
     await firstNameInput.fill(firstName);
     
     const lastNameInput = this.page.getByRole('textbox', { name: 'Enter Last Name' });
     await lastNameInput.fill(lastName);
+    
     const emailInput = this.page.getByRole('textbox', { name: 'Email' });
     await emailInput.fill(email);
+    
     await this.page.getByRole('button', { name: 'Submit' }).click();
-    await this.page.waitForLoadState('networkidle');
-}
+  
+  }
 
-async verifySuccessMessage(): Promise<void> {
+  async verifySuccessMessage(): Promise<void> {
     await expect(this.successMessage).toBeVisible({ timeout: DEFAULT_TIMEOUT });
     await this.page.waitForTimeout(3000); // Wait for 3 seconds
-}
-
-
+  }
 }

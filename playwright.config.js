@@ -11,7 +11,7 @@ const { defineConfig, devices } = require('@playwright/test');
  * @see https://playwright.dev/docs/test-configuration
  */
 module.exports = defineConfig({
-  testDir: 'tests',
+  testDir: './test',
   /* Run tests in files in parallel */
   fullyParallel: true,
   /* Fail the build on CI if you accidentally left test.only in the source code. */
@@ -25,8 +25,8 @@ module.exports = defineConfig({
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
   use: {
     headless: false,
-    baseURL: process.env.BASE_URL || 'https://telaeris.xptrackstaging.com',
-    trace: 'on-first-retry', // Set to false for headed mode
+    baseURL: process.env.BASE_URL || 'https://stage.xptracklocal.test',
+    trace: 'on', // Set to false for headed mode
     /* Base URL to use in actions like `await page.goto('/')`. */
     // baseURL: 'http://127.0.0.1:3000',
     /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
