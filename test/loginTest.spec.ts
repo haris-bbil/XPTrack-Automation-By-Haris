@@ -13,7 +13,7 @@ const TEST_USERS = {
   }
 };
 
-test.describe('Login Functionality Tests', () => {
+test.describe('Login Page Tests Cases', () => {
   let loginPage: LoginPage;
 
   test.beforeEach(async ({ page }) => {
